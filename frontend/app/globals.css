@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+:root {
+  --bg-dark: #080a12;
+  --text-main: #ffffff;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+/* ─── FONDO VIBRANTE FUTURISTA TIPO MONOPO (LUMINOSO Y ANIMADO) ─── */
+@keyframes monopoMeshMove {
+  0% {
+    background-position: 0% 0%, 100% 0%, 50% 100%, 0% 100%;
+  }
+  50% {
+    background-position: 100% 100%, 0% 100%, 0% 0%, 100% 0%;
+  }
+  100% {
+    background-position: 0% 0%, 100% 0%, 50% 100%, 0% 100%;
+  }
+}
+
+.monopo-animated-bg {
+  background-color: #0b0d19;
+  background-image: 
+    radial-gradient(at 15% 20%, rgba(45, 120, 255, 0.5) 0px, transparent 55%),
+    radial-gradient(at 85% 15%, rgba(255, 105, 45, 0.45) 0px, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(0, 210, 255, 0.35) 0px, transparent 65%),
+    radial-gradient(at 80% 85%, rgba(240, 80, 40, 0.4) 0px, transparent 55%),
+    radial-gradient(at 20% 80%, rgba(80, 40, 220, 0.45) 0px, transparent 50%);
+  background-size: 170% 170%;
+  animation: monopoMeshMove 14s ease-in-out infinite;
+  background-attachment: fixed;
+}
+
+/* ─── TARJETAS Y CRISTALERÍA ─── */
+.glass-panel {
+  background: rgba(18, 22, 36, 0.6) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  transform: translateY(-4px) scale(1.02);
+  border-color: rgba(255, 255, 255, 0.35) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 25px rgba(0, 180, 255, 0.2);
+}
+
+/* Cápsula Passport LATAM */
+.passport-brand-badge {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 9999px;
+  padding: 6px 18px;
+  transition: all 0.3s ease;
+}
+
+.passport-brand-badge:hover {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+/* Animación de la cápsula rebotando en el Hero */
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+.dot-bounce {
+  animation: scrollBounce 1.6s infinite ease-in-out;
+}
+
+/* Botón Flotante con la N bien marcada */
+.naly-n-btn {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(10, 12, 20, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+  transition: all 0.3s ease;
+}
+
+.naly-n-btn:hover {
+  transform: scale(1.1);
+  border-color: #ffffff;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
+}
